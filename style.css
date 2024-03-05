@@ -1,0 +1,843 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.4s;
+}
+
+body {
+    background: #eff9f2;
+}
+
+:root {
+    font-size: 10px;
+    font-family: "Poppins", sans-serif;
+    --our_btn_bgcolor: #5fcf80;
+    --our_btn_color: #ecfff1;
+    --our_btn_bgcolor_hover: var(--our_btn_color);
+    --our_btn_color_hover: var(--our_btn_bgcolor);
+    --bgColor: var(--our_btn_bgcolor);
+    --color: var(--our_btn_color);
+}
+
+/* *************************************************************************************************************
+Common css styling 
+************************************************************************************************************** */
+a {
+    text-decoration: none;
+    display: inline-block;
+    color: var(--color);
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    padding: 0px 40px;
+}
+
+.d_flex {
+    display: flex;
+    align-items: center;
+}
+
+.bord {
+    border: 1px solid green;
+}
+
+.our_btn {
+    background-color: #17b045 !important;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.our_btn:hover {
+    background-color: #5fcf80 !important;
+    outline: 2px solid #ecfff1 !important;
+}
+
+.svgWaves {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.waves {
+    width: 100% !important;
+    height: 230px !important;
+    object-fit: cover;
+    object-position: top;
+    margin-top: -30px;
+
+}
+
+.svgWaves .headingBox {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 2%;
+    text-align: center;
+}
+
+.svgWaves .headingBox img {
+    width: 6%;
+}
+
+.headingBox .heading {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--color);
+    letter-spacing: 1px;
+}
+
+/* *************************************************************************************************************
+Start header section styling  
+************************************************************************************************************** */
+header {
+    width: 100%;
+}
+
+/* ************************** Start offer section styling ******************** */
+header .offer {
+    text-align: center;
+    padding: 10px 0;
+    font-size: 1.7rem;
+    letter-spacing: 1px;
+    background: var(--bgColor);
+    color: var(--color);
+}
+
+.offer p {
+    position: relative;
+    z-index: 900;
+    text-shadow: 0px 0px 2px rgb(5, 71, 5);
+}
+
+.offer p::before {
+    content: "";
+    display: block;
+    width: 0;
+    margin: auto;
+    height: 100%;
+    background: linear-gradient(#17b045, #5fcf80);
+    position: absolute;
+    top: 0;
+    left: 36%;
+    z-index: -1;
+    animation: widthAnimation 1s infinite linear alternate;
+    border-radius: 2px;
+}
+
+@keyframes widthAnimation {
+    0% {
+        width: 0%;
+        background: linear-gradient(to left, #17b045, #5fcf80 50%);
+    }
+
+    100% {
+        width: 13%;
+        background: linear-gradient(to left, #17b045, #5fcf80 50%);
+    }
+}
+
+/*** End of offer section styling ***/
+
+/* ************************** Start navTop section styling ******************** */
+header .navTop {
+    width: 100%;
+    min-height: 70px;
+}
+
+.navTop .item {
+    width: 33.33%;
+}
+
+.navTop .left img {
+    width: 17%;
+    mix-blend-mode: multiply;
+    padding: 2px;
+}
+
+.navTop .middle form input[type="email"] {
+    width: 80%;
+    padding: 5px;
+    font-size: 1.6rem;
+    border-radius: 0;
+    outline: 2px solid var(--bgColor);
+    border: 0;
+}
+
+.navTop .middle .our_btn {
+    border: 0px;
+    outline: 0px;
+    font-size: 1.7rem;
+    padding: 6px 10px;
+    background: var(--our_btn_bgcolor);
+    color: var(--our_btn_color);
+    border: 1px solid var(--our_btn_bgcolor);
+    font-weight: normal !important;
+}
+
+.navTop .right {
+    text-align: right;
+}
+
+.navTop .right i {
+    width: 31px;
+    text-align: center;
+    aspect-ratio: 1/1;
+    line-height: 30px;
+    display: inline-block;
+    font-size: 1.8rem;
+    margin: 0 10px;
+    background: var(--bgColor);
+    color: var(--color);
+    border-radius: 100%;
+    box-shadow: 0px 0px 5px #17b045;
+}
+
+.navTop .right i:hover {
+    color: var(--bgColor);
+    background: var(--color);
+    transform: rotate(360deg);
+}
+
+.navTop .right i.fa-phone {
+    animation: phoneScale 0.7s linear infinite alternate;
+}
+
+@keyframes phoneScale {
+    0% {
+        transform: scale(0.6);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* ************************** Start navBottom section styling ******************** */
+header .navBottom {
+    width: 100%;
+    height: 70px;
+    background: var(--bgColor);
+}
+
+/* *********** deskTopManue styling *********** */
+.navBottom .deskTopManue {
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+}
+
+.navBottom .deskTopManue .hamBerger {
+    display: none;
+    font-size: 2rem;
+    color: #eff9f2;
+    background: #17b045;
+    padding: 2px 12px;
+    box-shadow: 0px 0px 10px #71f697;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.deskTopManue .left {
+    font-size: 1.7rem;
+    letter-spacing: 3px;
+    text-shadow: 0px 0px 3px #17b045;
+    color: var(--color);
+}
+
+.deskTopManue .right ul li a {
+    padding: 5px 9px;
+    font-size: 1.7rem;
+    margin: 0 2px;
+    letter-spacing: 1px;
+    font-weight: 400;
+}
+
+.deskTopManue .right ul li a:hover {
+    background: #71f697;
+    border-radius: 3px;
+    text-shadow: 0px 0px 3px #17b045;
+}
+
+/* ************************** Start hero section styling *************************** */
+header .hero {
+    width: 100%;
+    height: 65vh;
+}
+
+.swiper {
+    width: 100% !important;
+    overflow: hidden;
+    height: 100%;
+    position: relative;
+}
+
+.swiper .caption {
+    width: 100%;
+    height: 100%;
+    background-color: #0b0b0b93;
+    z-index: 20;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.caption .box {
+    background-color: #ffffff40;
+    padding: 10px;
+    backdrop-filter: blur(2px);
+    border-radius: 5px;
+    font-size: 1.7rem;
+    letter-spacing: 2px;
+    color: var(--color);
+}
+
+.caption .box .our_btn {
+    padding: 8px;
+    border: none;
+    outline: none;
+    font-size: 1.6rem;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+.swiper-button-next,
+.swiper-button-prev,
+.swiper-pagination {
+    z-index: 20 !important;
+    color: #fff !important;
+}
+
+.swiper-pagination span {
+    color: #fff !important;
+    background: #5fcf80;
+    padding: 3px !important;
+    font-size: 2rem !important;
+}
+
+.autoplay-progress {
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    z-index: 30;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #fff;
+    font-size: 1.6rem;
+}
+
+.autoplay-progress svg {
+    --progress: 0;
+    position: absolute;
+    left: 0;
+    top: 0px;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    stroke-width: 4px;
+    stroke: #fff;
+    fill: none;
+    stroke-dashoffset: calc(125.6 * (1 - var(--progress)));
+    stroke-dasharray: 125.6;
+    transform: rotate(-90deg);
+}
+
+/* ***********************************************************************************************************
+Start main section styling 
+************************************************************************************************************ */
+main.homeMain {
+    width: 100%;
+}
+
+/* ************************ Start about section styling ***************** */
+main .about {
+    width: 100%;
+}
+
+.about .box {
+    width: 100%;
+    min-height: 400px;
+    justify-content: space-between;
+    row-gap: 10px;
+}
+
+.about .box .left {
+    width: 45% !important;
+}
+
+.about .box .left h2 {
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    color: #17b045;
+    text-transform: uppercase;
+}
+
+.about .box .left .line {
+    width: 36%;
+    height: 3px;
+    background: var(--bgColor);
+    border-radius: 5px;
+}
+
+.about .box .left p {
+    font-size: 1.5rem;
+    color: darkslategray;
+}
+
+.about .box .left .our_btn {
+    padding: 10px 15px;
+    font-size: 1.5rem;
+}
+
+.about .box .middle {
+    width: 5% !important;
+    height: 400px;
+    text-align: center;
+}
+
+.about .box .middle img {
+    height: 100%;
+    width: 70%;
+    object-fit: cover;
+    mix-blend-mode: multiply;
+}
+
+.about .box .right {
+    width: 45% !important;
+}
+
+.about .box .right img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    padding: 15px;
+    background: var(--bgColor);
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px #5fcf80;
+}
+
+/* ************************ Start Courses section styling ***************** */
+main .courses {
+    width: 100%;
+}
+
+.courses .item {
+    width: 25%;
+    min-height: 360px;
+    padding: 0px 5px;
+}
+
+.courses .box {
+    flex-wrap: wrap;
+    width: 100%;
+    min-height: 360px;
+    row-gap: 15px;
+}
+
+.courses .item .box {
+    box-shadow: 0px 0px 10px #315c3f63;
+    border-radius: 5px;
+    overflow: hidden;
+    padding: 8px;
+    row-gap: 90px !important;
+}
+
+.courses .item .box .imgBox {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.courses .item .box .imgBox img {
+    width: 100%;
+    height: 60%;
+    object-fit: cover;
+    box-shadow: 0px 0px 10px #315c3f63 inset;
+}
+
+.courses .item .box .imgBox:hover img {
+    transform: scale(1.02);
+}
+
+.courses .item .box .imgBox .hoverBox {
+    background-color: #0b0b0b7e;
+    position: absolute;
+    top: -100%;
+    left: 0;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.courses .item .box:hover .imgBox .hoverBox {
+    top: 0;
+}
+
+.courses .item .box .imgBox .hoverBox .our_btn {
+    font-size: 1.3rem;
+    background-color: transparent !important;
+    outline: 2px solid #fff;
+    border-radius: 5px;
+}
+
+.courses .item .box .imgBox .hoverBox .our_btn:hover {
+    background: #5fcf80 !important;
+    color: var(--color);
+}
+
+.courses .item .box p {
+    text-align: justify;
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+.courses .item .box .text {
+    justify-content: space-between;
+    margin-top: 13px;
+}
+
+.courses .item .box .text i {
+    font-size: 2rem;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.courses .item .box .text h2 {
+    font-size: 1.7rem;
+    color: #5fcf80;
+    letter-spacing: 1px;
+}
+
+.courses .item .box .our_btn {
+    width: 100%;
+    padding: 8px;
+    font-size: 1.6rem;
+}
+
+.courses .item .box .our_btn:hover {
+    background: #ecfff1 !important;
+    color: var(--bgColor);
+    outline: 2px solid #5fcf80 !important;
+}
+
+/* ************************ Start trainers section styling ***************** */
+main .trainers {
+    width: 100%;
+    height: 380px;
+    margin-bottom: 100px;
+}
+
+.trainers .box {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("./img/img7.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.trainers .box .swiper-slide {
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+}
+
+.trainers .box .swiper-slide .col {
+    width: 45% !important;
+    border: 2px double #fff;
+    height: 63%;
+    margin: 0 auto;
+    position: relative;
+    color: #fff;
+    text-align: left;
+    padding: 10px;
+    padding-left: 100px;
+    background: #ffffff19;
+    backdrop-filter: blur(3px);
+}
+
+.trainers .box .swiper-slide .col img {
+    width: 100px;
+    height: 120px;
+    object-fit: cover;
+    position: absolute;
+    top: -20%;
+    border: 2px double #fff;
+    padding: 2px;
+    box-shadow: 0px 0px 3px #17b045 inset;
+    left: -10%;
+}
+
+.trainers .box .swiper-slide .col .our_btn {
+    font-size: 1.7rem;
+    padding: 5px;
+    /* border-radius: ; */
+}
+
+/* ************************ Start trainers section styling ***************** */
+main .review {
+    width: 100%;
+    height: 400px;
+}
+.review .swiper {
+    width: 70% !important;
+    padding-bottom: 50px;
+    height: 75%;
+}
+.review .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 50% !important;
+    height: 110% !important;
+    background: #5fcf80;
+    border-radius: 0px;
+}
+.review .swiper-slide .box{
+    width: 80%;
+    height: 70%;
+    background: #ecfff1;
+    margin: 55px auto;
+    box-shadow: 0px 0px 10px #6f7070;
+    border: 1px solid #ecfff1;
+
+}
+.review .swiper-slide .box img{
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(to bottom,#ecfff1 50%, #5fcf80 50%);
+    padding: 5px;
+    border-radius: 100%;
+    margin: -40px auto;
+    box-shadow: 0px -1px 5px #6f7070;
+}
+.review .swiper-slide .box h3{
+    margin-top: 10px;
+    color: #17b045;
+    text-shadow: 0px 0px 1px green;
+}
+.review .swiper-slide .box p{
+    color: darkslategray;
+}
+
+/* ************************ Start location section styling ***************** */
+main .location {
+    width: 100%;
+    height: 400px;
+}
+.location .box{
+    width: 100%;
+    height: 84%;
+}
+.location .box iframe{
+    width: 100%;
+    height: 100%;
+}
+
+/* ***********************************************************************************************************
+Start footer styling 
+************************************************************************************************************ */
+footer{
+    width: 100%;
+    min-height: 400px;
+    background-color: #2f342f;
+    margin-top: 50px;
+}
+/* ********************** Start footerTop styling ***************** */
+footer .footerTop{
+    width: 100%;
+    height: 20%;
+    border: 2px solid red;
+    background: #434743;
+    font-size: 1.4rem;
+    color: #eff9f2;
+    justify-content: space-between;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.footerTop .item{
+    gap: 10px;
+}
+.footerTop .item .left{
+    padding: 8px 12px;
+    background: #2f342f;
+    border-radius: 100%;
+}
+.footerTop .item .right .socalMedia i{
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 1.6rem;
+    border-radius: 100%;
+    cursor: pointer;
+    margin-left: 5px;
+}
+/* ********************** Start footerMiddle Styling ************** */
+footer .footerMiddle{
+    width: 100%;
+    height: 300px;
+    border: 2px solid blue;
+}
+footer .footerMiddle .item{
+    width: 25%;
+    height: 100%;
+    border: 2px solid red;
+}
+
+
+/* ***********************************************************************************************************
+Start mediaQuerry section styling 
+************************************************************************************************************ */
+@media all and (max-width:992px) {
+    header .navTop .middle {
+        width: 60%;
+    }
+
+    header .navTop .right {
+        width: 55%;
+    }
+
+    header .navTop .left img {
+        width: 38%;
+    }
+
+    @keyframes widthAnimation {
+        0% {
+            width: 0%;
+            left: 31%;
+            background: linear-gradient(to left, #17b045, #5fcf80);
+        }
+
+        100% {
+            width: 20%;
+            left: 31%;
+            background: linear-gradient(to left, #17b045, #5fcf80);
+        }
+    }
+
+    header .navBottom .deskTopManue .right {
+        display: none;
+    }
+
+    header .navBottom .deskTopManue .hamBerger {
+        display: block;
+    }
+
+    .courses .box .item {
+        width: 33.33% !important;
+    }
+
+}
+
+@media all and (max-width:768px) {
+    .container {
+        padding: 0 10px;
+    }
+
+    @keyframes widthAnimation {
+        0% {
+            width: 0%;
+            left: 23%;
+            background: linear-gradient(to left, #17b045, #5fcf80 40%);
+        }
+
+        100% {
+            width: 29%;
+            left: 23%;
+            background: linear-gradient(to left, #17b045, #5fcf80 40%);
+        }
+    }
+
+    header .navTop {
+        flex-direction: column;
+        row-gap: 10px;
+        padding: 10px 10px;
+    }
+
+    header .navTop .item {
+        width: 100%;
+    }
+
+    header .navTop .left img {
+        width: 15%;
+        margin: 0 auto;
+    }
+
+    header .navTop .middle .our_btn {
+        width: 20%;
+    }
+
+    header .navTop .right {
+        text-align: center;
+    }
+
+    .caption .box {
+        font-size: 1.5rem;
+    }
+
+    .svgWaves .headingBox img {
+        width: 10%;
+    }
+
+    .about .box .middle {
+        display: none;
+    }
+
+    .about .box :is(.left, .right) {
+        width: 100% !important;
+    }
+
+    .about .box {
+        flex-direction: column;
+    }
+
+    .courses .box .item {
+        width: 50% !important;
+    }
+
+}
+
+@media all and (max-width:576px) {
+    header .navTop .item {
+        width: 100%;
+    }
+
+    header .navTop .left img {
+        width: 20%;
+    }
+
+    .waves {
+        height: 240px !important;
+    }
+
+    .svgWaves .headingBox img {
+        width: 15%;
+    }
+
+    .courses .box .item {
+        width: 100% !important;
+    }
+}
